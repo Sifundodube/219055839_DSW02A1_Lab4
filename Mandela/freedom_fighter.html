@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelson Mandela - Freedom Fighter Gallery</title>
+    <link rel="stylesheet" href="freedom_fighter.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nelson Mandela Gallery</h1>
+            <p class="subtitle">1918 - 2013 | Anti-Apartheid Revolutionary | Nobel Peace Prize 1993</p>
+        </header>
+        
+        <div class="stats-panel">
+            <div class="stat-card">
+                <span class="stat-label"> Remaining Images</span>
+                <span class="stat-value" id="remainingCounter">6</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Selection Order</span>
+                <span class="stat-value" id="selectionOrder">None</span>
+            </div>
+        </div>
+
+        <div class="main-gallery">
+            <div class="section-title">
+                <h2>Main Gallery</h2>
+                <p>Click any image to add to favorites</p>
+            </div>
+            <div id="pics" class="gallery-grid">
+                <div class="image-card" data-id="1" data-moved="false">
+                    <img src="images/image1.jpg" alt="Young Nelson Mandela - Early Years" class="gallery-img">
+                </div>
+                <div class="image-card" data-id="2" data-moved="false">
+                    <img src="images/image2.jpg" alt="Mandela during Apartheid Struggle" class="gallery-img">
+                </div>
+                <div class="image-card" data-id="3" data-moved="false">
+                    <img src="images/image3.jpg" alt="Mandela after Prison Release" class="gallery-img">
+                </div>
+                <div class="image-card" data-id="4" data-moved="false">
+                    <img src="images/image4.jpg" alt="President Mandela Inauguration" class="gallery-img">
+                </div>
+                <div class="image-card" data-id="5" data-moved="false">
+                    <img src="images/iamge5.jpg" alt="Mandela Nobel Peace Prize Ceremony" class="gallery-img">
+                </div>
+                <div class="image-card" data-id="6" data-moved="false">
+                    <img src="images/image6.jpg" alt="Madiba Legacy Portrait" class="gallery-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="favourites-section">
+            <div class="section-title">
+                <h2>Favourites Area</h2>
+                <p>Click on images here to revert them</p>
+            </div>
+            <div id="favourites" class="favourites-grid"></div>
+        </div>
+
+        <div class="actions-section">
+            <div class="section-title">
+                <h2>Actions Log</h2>
+            </div>
+            <ul id="actionsList" class="actions-list">
+                <li class="empty-message">No actions performed yet</li>
+            </ul>
+        </div>
+    </div>
+    <script src="freedom_fighter.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #252731 0%, #d6d1da 100%);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.stats-panel {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 30px;
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.stat-card {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.stat-value {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.section-title {
+    background: #f1f5f9;
+    padding: 15px 25px;
+    border-left: 5px solid #3b82f6;
+}
+
+.section-title h2 {
+    color: #0f172a;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    color: #f22e14;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.gallery-grid, .favourites-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px;
+    min-height: 300px;
+    background: white;
+}
+
+.image-card {
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: 180px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-card.selected {
+    border: 3px solid #10b981;
+    box-shadow: 0 0 0 2px rgba(16,185,129,0.3);
+}
+
+.favourites-grid .image-card {
+    cursor: pointer;
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: 180px;
+}
+
+.image-card[data-moved="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
+.actions-section {
+    background: #f8fafc;
+    border-top: 2px solid #e2e8f0;
+}
+
+.actions-list {
+    list-style: none;
+    padding: 20px 25px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.actions-list li {
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: white;
+    border-left: 4px solid #0762f4;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #334155;
+    font-family: 'Courier New', monospace;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.actions-list .empty-message {
+    color: #94a3b8;
+    font-style: italic;
+    background: transparent;
+    border-left-color: #cbd5e1;
+    text-align: center;
+    font-family: inherit;
+}
+
+@media (max-width: 768px) {
+    .image-card, .favourites-grid .image-card {
+        flex: 0 0 calc(50% - 20px);
+    }
+    
+    .stats-panel {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-card, .favourites-grid .image-card {
+        flex: 0 0 100%;
+    }
+}
