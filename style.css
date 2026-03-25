@@ -1,0 +1,12 @@
+.column {
+float: left;
+margin-right: 1em;
+}
+#comparearea { clear: left; }
+#differences li {
+font-family: monospace;
+white-space: pre;
+}
+.nochange { background-color: #ccffcc; }
+.change { background-color: #e5b7b7;
+font-weight: bold;}
